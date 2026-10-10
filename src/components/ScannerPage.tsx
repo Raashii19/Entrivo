@@ -29,7 +29,7 @@ export const ScannerPage: React.FC<ScannerPageProps> = ({
   const { status, lastResult, isProcessing, scanTicket, resetToScanner } =
     useTicketScanner();
 
-  const [selectedTicketId, setSelectedTicketId] = useState('KELI26-001');
+  const [selectedTicketId, setSelectedTicketId] = useState('TICKET-001');
   const [isResetModalOpen, setIsResetModalOpen] = useState(false);
 
   const handleScanAction = async (ticketId: string) => {

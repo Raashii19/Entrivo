@@ -1,4 +1,4 @@
-package com.keli26.festival;
+package com.entrivo.app;
 
 import com.getcapacitor.BridgeActivity;
 

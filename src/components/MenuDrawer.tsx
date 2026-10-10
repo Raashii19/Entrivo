@@ -47,7 +47,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
       />
       <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm animate-drawer-in bg-blue-surface border-l border-blue-subtle flex flex-col">
         <div className="flex items-center justify-between px-4 py-3 border-b border-blue-subtle">
-          <h2 className="text-lg font-bold text-white">KELI26 Menu</h2>
+          <h2 className="text-lg font-bold text-white">Entrivo Menu</h2>
           <button
             type="button"
             onClick={onClose}
@@ -208,7 +208,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
                 <div className="w-9 h-9 rounded-lg bg-blue-active border border-blue-medium flex items-center justify-center">
                   <Info className="w-5 h-5 text-cyan-primary" />
                 </div>
-                <span className="font-medium text-white">About KELI26</span>
+                <span className="font-medium text-white">About Entrivo</span>
                 <ChevronRight className="w-5 h-5 text-text-muted ml-auto" />
               </button>
             </div>

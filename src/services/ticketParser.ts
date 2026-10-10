@@ -17,9 +17,9 @@ function extractIdCandidates(text: string): string[] {
   const upper = text.toUpperCase();
   const candidates: string[] = [];
 
-  const kelidPattern = /KELI26[0-9]+/g;
+  const ticketIdPattern = /TICKET[-\s]?[0-9]+/g;
   let match: RegExpExecArray | null;
-  while ((match = kelidPattern.exec(upper)) !== null) {
+  while ((match = ticketIdPattern.exec(upper)) !== null) {
     candidates.push(match[0]);
   }
 

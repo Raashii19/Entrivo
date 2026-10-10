@@ -18,8 +18,8 @@
     </filter>
   </defs>
   <rect width="512" height="512" rx="80" fill="url(#bgGrad)"/>
-  <text x="50%" y="54%" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="200" font-weight="900" fill="white" filter="url(#glow)">
-    <tspan fill="white">KELI</tspan><tspan fill="url(#textGrad)">26</tspan>
+  <text x="50%" y="54%" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="110" font-weight="900" fill="white" filter="url(#glow)">
+    <tspan fill="url(#textGrad)">ENTRIVO</tspan>
   </text>
   <circle cx="420" cy="92" r="18" fill="#06B6D4" opacity="0.9">
     <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>

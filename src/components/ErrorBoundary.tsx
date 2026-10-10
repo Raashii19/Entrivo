@@ -75,7 +75,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </div>
 
             <p className="mt-4 text-[11px] text-blue-500/60 font-mono">
-              KELI26 v2.6 • Error Boundary Active
+              Entrivo v2.6 • Error Boundary Active
             </p>
           </div>
         </div>

@@ -13,7 +13,7 @@ export function useTicketScanner() {
     duplicateCount: 0,
   });
 
-  const scanTicket = useCallback(async (ticketId: string = 'KELI26-001', eventId?: string) => {
+  const scanTicket = useCallback(async (ticketId: string = 'TICKET-001', eventId?: string) => {
     setIsProcessing(true);
     setStatus('scanning');
 

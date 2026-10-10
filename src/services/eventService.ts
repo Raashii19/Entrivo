@@ -5,7 +5,7 @@ import type {
   TicketData,
   ScanResult,
 } from '../types/event';
-import { getRegistry, getTotalAttendees } from './registryService';
+import { getRegistry, getTotalAttendees, migrateLegacyStorageKeys } from './registryService';
 import { normalizeId } from './ticketParser';
 
 // Initial Mock Events
@@ -64,48 +64,48 @@ const DEFAULT_EVENTS: FestivalEvent[] = [
 
 // Mock Attendee Database (Students who purchased festival passes)
 export const MOCK_TICKETS: Record<string, TicketData> = {
-  'KELI26-001': {
-    ticketId: 'KELI26-001',
+  'TICKET-001': {
+    ticketId: 'TICKET-001',
     studentName: 'Muhammed Rashid',
     department: 'Computer Science & Engineering',
     collegeId: 'CS2026-042',
     passType: 'General',
     paidStatus: 'Paid',
   },
-  'KELI26-0001': {
-    ticketId: 'KELI26-0001',
+  'TICKET-0001': {
+    ticketId: 'TICKET-0001',
     studentName: 'Muhammed Rashid',
     department: 'Computer Science & Engineering',
     collegeId: 'CS2026-042',
     passType: 'General',
     paidStatus: 'Paid',
   },
-  'KELI26-002': {
-    ticketId: 'KELI26-002',
+  'TICKET-002': {
+    ticketId: 'TICKET-002',
     studentName: 'Ananya Sharma',
     department: 'Electronics & Communication',
     collegeId: 'EC2026-118',
     passType: 'VIP',
     paidStatus: 'Paid',
   },
-  'KELI26-0002': {
-    ticketId: 'KELI26-0002',
+  'TICKET-0002': {
+    ticketId: 'TICKET-0002',
     studentName: 'Ananya Sharma',
     department: 'Electronics & Communication',
     collegeId: 'EC2026-118',
     passType: 'VIP',
     paidStatus: 'Paid',
   },
-  'KELI26-003': {
-    ticketId: 'KELI26-003',
+  'TICKET-003': {
+    ticketId: 'TICKET-003',
     studentName: 'Aditya Varma',
     department: 'Mechanical Engineering',
     collegeId: 'ME2026-089',
     passType: 'Standard',
     paidStatus: 'Paid',
   },
-  'KELI26-004': {
-    ticketId: 'KELI26-004',
+  'TICKET-004': {
+    ticketId: 'TICKET-004',
     studentName: 'Sneha Patel',
     department: 'Biotechnology',
     collegeId: 'BT2026-015',
@@ -115,9 +115,9 @@ export const MOCK_TICKETS: Record<string, TicketData> = {
 };
 
 // Keys for local persistence
-const STORAGE_EVENTS_KEY = 'keli26_events_registry';
-const STORAGE_USAGE_KEY = 'keli26_ticket_usage_map';
-const STORAGE_CURRENT_EVENT_KEY = 'keli26_current_event_id';
+const STORAGE_EVENTS_KEY = 'entrivo_events_registry';
+const STORAGE_USAGE_KEY = 'entrivo_ticket_usage_map';
+const STORAGE_CURRENT_EVENT_KEY = 'entrivo_current_event_id';
 
 class EventService {
   private events: FestivalEvent[] = [];
@@ -129,6 +129,7 @@ class EventService {
   }
 
   private loadFromStorage() {
+    migrateLegacyStorageKeys();
     try {
       const storedEvents = localStorage.getItem(STORAGE_EVENTS_KEY);
       if (storedEvents) {

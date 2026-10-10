@@ -1,13 +1,44 @@
 import type { TicketData } from '../types/event';
 
-const REGISTRY_KEY = 'keli26_ticket_registry';
-const IMPORTED_FLAG_KEY = 'keli26_registry_imported';
+const REGISTRY_KEY = 'entrivo_ticket_registry';
+const IMPORTED_FLAG_KEY = 'entrivo_registry_imported';
+
+const LEGACY_KEYS: Record<string, string> = {
+  'keli26_ticket_registry': 'entrivo_ticket_registry',
+  'keli26_registry_imported': 'entrivo_registry_imported',
+  'keli26_events_registry': 'entrivo_events_registry',
+  'keli26_ticket_usage_map': 'entrivo_ticket_usage_map',
+  'keli26_current_event_id': 'entrivo_current_event_id',
+};
+
+const MIGRATION_DONE_KEY = 'entrivo_storage_migrated';
+
+/**
+ * One-time migration of legacy keli26_* localStorage keys to entrivo_* keys.
+ * Runs lazily on first storage access; preserves previously saved data.
+ */
+export function migrateLegacyStorageKeys(): void {
+  try {
+    if (localStorage.getItem(MIGRATION_DONE_KEY) === 'true') return;
+    for (const [oldKey, newKey] of Object.entries(LEGACY_KEYS)) {
+      const value = localStorage.getItem(oldKey);
+      if (value !== null && localStorage.getItem(newKey) === null) {
+        localStorage.setItem(newKey, value);
+      }
+      localStorage.removeItem(oldKey);
+    }
+    localStorage.setItem(MIGRATION_DONE_KEY, 'true');
+  } catch {
+    // storage unavailable - app falls back to defaults naturally
+  }
+}
 
 interface RegistryEntry extends TicketData {
   phone?: string;
 }
 
 function getRegistryFromStorage(): Map<string, RegistryEntry> {
+  migrateLegacyStorageKeys();
   try {
     const stored = localStorage.getItem(REGISTRY_KEY);
     if (!stored) return new Map();
@@ -24,6 +55,7 @@ function saveRegistryToStorage(registry: Map<string, RegistryEntry>): void {
 }
 
 export function isRegistryImported(): boolean {
+  migrateLegacyStorageKeys();
   return localStorage.getItem(IMPORTED_FLAG_KEY) === 'true';
 }
 

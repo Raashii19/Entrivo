@@ -3,7 +3,7 @@ import React from 'react';
 interface FestivalLogoProps {
   size?: 'sm' | 'md' | 'lg';
   showSubtitle?: boolean;
-  customLogoUrl?: string; // Replaceable with real KELI26 image when available
+  customLogoUrl?: string; // Replaceable with real Entrivo image when available
   className?: string;
 }
 
@@ -19,7 +19,7 @@ export const FestivalLogo: React.FC<FestivalLogoProps> = ({
       <div className={`flex flex-col items-center justify-center ${className}`}>
         <img
           src={customLogoUrl}
-          alt="KELI26 Official Logo"
+          alt="Entrivo Official Logo"
           className={
             size === 'sm'
               ? 'h-8 w-auto'
@@ -69,17 +69,14 @@ export const FestivalLogo: React.FC<FestivalLogoProps> = ({
         <div
           className={`${sizeStyles.badge} relative flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-800 text-white font-black shadow-lg shadow-blue-500/30 border border-blue-400/40`}
         >
-          <span className="tracking-tighter">K</span>
+          <span className="tracking-tighter">E</span>
           <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-cyan-400 animate-ping opacity-75" />
         </div>
 
         {/* Wordmark */}
         <div className="flex flex-col">
           <div className={`font-black tracking-tight text-white flex items-center ${sizeStyles.text}`}>
-            <span>KELI</span>
-            <span className={`${sizeStyles.number} ml-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent`}>
-              26
-            </span>
+            <span>Entrivo</span>
           </div>
         </div>
       </div>

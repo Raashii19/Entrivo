@@ -10,7 +10,7 @@ interface ValidTicketProps {
 
 export const ValidTicket: React.FC<ValidTicketProps> = ({
   ticket = {
-    ticketId: 'KELI26-001',
+    ticketId: 'TICKET-001',
     studentName: 'Muhammed Rashid',
     department: 'Computer Science & Engineering',
     passType: 'General',

@@ -12,9 +12,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon-180x180.png'],
       manifest: {
-        name: 'KELI26 Festival Scanner',
-        short_name: 'KELI26',
-        description: 'KELI26 College Festival Ticket Scanner & Entry Verification Portal',
+        name: 'Entrivo',
+        short_name: 'Entrivo',
+        description: 'Entrivo Event Portal - Ticket Scanner & Entry Verification',
         theme_color: '#050b18',
         background_color: '#050b18',
         display: 'standalone',

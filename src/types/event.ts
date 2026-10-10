@@ -1,5 +1,5 @@
 /**
- * Domain types for KELI26 Event Management and Multi-Event Ticket Verification System
+ * Domain types for Entrivo Event Management and Multi-Event Ticket Verification System
  */
 
 export type EventStatus = 'active' | 'archived';

@@ -17,8 +17,8 @@ export async function verifyTicket(ticketId: string, eventId?: string): Promise<
  * Preset simulation tickets for quick testing in prototype mode
  */
 export const SAMPLE_SIMULATIONS = [
-  { label: 'Muhammed Rashid', ticketId: 'KELI26-001', type: 'valid' as const },
-  { label: 'Ananya Sharma', ticketId: 'KELI26-002', type: 'valid' as const },
-  { label: 'Aditya Varma', ticketId: 'KELI26-003', type: 'valid' as const },
-  { label: 'Invalid Pass', ticketId: 'KELI26-999', type: 'invalid' as const },
+  { label: 'Muhammed Rashid', ticketId: 'TICKET-001', type: 'valid' as const },
+  { label: 'Ananya Sharma', ticketId: 'TICKET-002', type: 'valid' as const },
+  { label: 'Aditya Varma', ticketId: 'TICKET-003', type: 'valid' as const },
+  { label: 'Invalid Pass', ticketId: 'TICKET-999', type: 'invalid' as const },
 ];

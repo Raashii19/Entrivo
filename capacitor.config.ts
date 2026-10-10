@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.keli26.festival',
-  appName: 'KELI26 Festival Scanner',
+  appId: 'com.entrivo.app',
+  appName: 'Entrivo',
   webDir: 'dist',
   server: {
     androidScheme: 'https',

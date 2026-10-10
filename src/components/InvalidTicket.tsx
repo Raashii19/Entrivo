@@ -45,7 +45,7 @@ export const InvalidTicket: React.FC<InvalidTicketProps> = ({
         <div className="flex items-start gap-2.5 text-sm text-text-secondary bg-invalid/10 p-3 rounded-2xl border border-invalid/30">
           <HelpCircle className="w-5 h-5 text-invalid shrink-0 mt-0.5" />
           <span>
-            Ask attendee to check their official KELI26 confirmation email or escort to the Help Desk.
+            Ask attendee to check their official Entrivo confirmation email or escort to the Help Desk.
           </span>
         </div>
 

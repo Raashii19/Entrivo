@@ -1,5 +1,5 @@
 /**
- * Domain types for KELI26 Ticket Verification System
+ * Domain types for Entrivo Ticket Verification System
  */
 
 export * from './event';

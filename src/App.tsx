@@ -95,7 +95,7 @@ export function App() {
           )}
 
           <footer className="w-full text-center py-2.5 pb-safe text-[11px] text-text-muted select-none border-t border-blue-medium/40">
-            KELI26 College Festival • Multi-Event Volunteer Terminal
+            Entrivo College Festival • Multi-Event Volunteer Terminal
           </footer>
         </div>
       )}
