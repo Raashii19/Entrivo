@@ -1,4 +1,4 @@
-export interface ParsedScanResult {
+﻿export interface ParsedScanResult {
   ticketId?: string;
   phone?: string;
   rawText: string;
@@ -85,15 +85,7 @@ export function resolveTicketId(
       if (normMatch) return normMatch.ticketId;
     }
 
-    const numericSuffix = parsed.ticketId.replace(/^[^0-9]*/, '');
-    if (numericSuffix.length >= 3) {
-      for (const [, entry] of registry) {
-        const entrySuffix = entry.ticketId.replace(/^[^0-9]*/, '');
-        if (entrySuffix === numericSuffix || entrySuffix.endsWith(numericSuffix)) {
-          return entry.ticketId;
-        }
-      }
-    }
+
   }
 
   if (parsed.phone) {
